@@ -1,28 +1,36 @@
+
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand mr-auto">DOUBLEDUO CINEPLEX </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navContent"
+        aria-controls="navContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <router-link :to="{name: 'MovieList'}" class="nav-link">รายการภาพยนต์</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link :to="{name: 'CreateMovie'}" class="nav-link">เพิ่มรายการภาพยนต์</router-link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <router-view></router-view>
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import { store } from "./store/store";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  store
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
